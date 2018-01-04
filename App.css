@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: black;
   height: 150px;
   padding: 20px;
   color: white;
@@ -23,15 +23,34 @@
 .App-intro {
   font-size: large;
 }
+
+.container {
+  background-color: rgba(0, 6, 24, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+}
 /*
   CSS grid, y'all!
 */
-.container {
+.wizards-container {
+  width: 80%;
   display: grid;
   grid-template-columns: 2fr 2fr;
   grid-template-rows: 3fr;
   grid-gap: .9rem;
   padding: 2%;
+}
+
+.selected-wizard {
+  width: 80%;
+  padding: 20px 0;
+  font-size: 1.5rem;
+  font-family: fantasy;
+  font-weight: 400;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .wizard {
@@ -40,7 +59,7 @@
   color: white;
   font-size: 1.3rem;
   font-weight: bold;
-  font-family: fantasy;
+  font-family: cursive;
   padding: 10%;
 }
 .wizard:hover {
@@ -50,15 +69,15 @@
 }
 
 .Hufflepuff {
-  background: violet;
+  background: rgba(24, 0, 12, 0.8);
 }
 
 .Gryffindor {
-  background: royalblue;
+  background: rgba(0, 12, 24, 0.8);
 }
 
 .Slytherin {
-  background: limegreen;
+  background: rgba(0, 24, 12, 0.8);
 }
 
 @keyframes App-logo-spin {
