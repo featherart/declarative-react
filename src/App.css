@@ -43,14 +43,36 @@
   padding: 2%;
 }
 
-.selected-wizard {
+.selected-wizard, .search-wizards {
   width: 80%;
-  padding: 20px 0;
+  padding: 10px 0;
+  margin: 10px 0;
   font-size: 1.5rem;
   font-family: fantasy;
   font-weight: 400;
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+label {
+  font-size: 1rem;
+  padding-right: 5px;
+}
+
+.search-button {
+  margin: 5px;
+  height: 20px;
+  width: 75px;
+  background-color: transparent;
+  color: white;
+  font-size: .8rem;
+  font-family: sans-serif;
+  border-radius: 0;
+}
+.search-button:hover {
+  background-color: white;
+  color: black;
+  border: none;
 }
 
 .wizard {
@@ -62,6 +84,7 @@
   font-family: cursive;
   padding: 10%;
 }
+
 .wizard:hover {
   background-color: transparent;
   color: limegreen;
