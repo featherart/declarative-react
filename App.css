@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s ease;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.8em;
+  font-family: fantasy;
+}
+
+.App-intro {
+  font-size: large;
+}
+/*
+  CSS grid, y'all!
+*/
+.container {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 3fr;
+  grid-gap: .9rem;
+  padding: 2%;
+}
+
+.wizard {
+  animation: square-fade-in 1 10s ease;
+  background-color: black;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: fantasy;
+  padding: 10%;
+}
+.wizard:hover {
+  background-color: transparent;
+  color: limegreen;
+  border: 1px solid limegreen;
+}
+
+.Hufflepuff {
+  background: violet;
+}
+
+.Gryffindor {
+  background: royalblue;
+}
+
+.Slytherin {
+  background: limegreen;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes square-fade-in {
+  0% { opacity: 0; color: red; }
+  25% { opacity: 20%; color: orange; }
+  75% { opacity: 50%; color: limegreen; }
+  100% { opacity: 70%; color: white; }
+}
