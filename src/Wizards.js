@@ -3,23 +3,28 @@ import WizardSelector from "./WizardSelector";
 import wizardStore from "./wizardStore";
 
 class Wizards extends Component {
-  state = {
-    wizards: wizardStore,
-    selectedWizard: "Harry",
-    searchedWizard: ""
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      wizards: wizardStore,
+      selectedWizard: "Harry",
+      searchedWizard: ""
+    };
+  }
 
   handleWizardChange(e) {
-    e.preventDefault();
     this.setState({ selectedWizard: e.target.dataset.name });
   }
 
   handleWizardSearch(e) {
-    e.preventDefault();
-    this.setState({ searchedWizard: e.target.value.toLowerCase() });
+    this.setState({
+      searchedWizard: e.target.value.toLowerCase(),
+      wizards: wizardStore
+    });
   }
 
-  searchWizards() {
+  searchWizards(e) {
+    e.preventDefault();
     this.state.searchedWizard
       ? this.setState({
           wizards: this.state.wizards.filter(
@@ -37,19 +42,15 @@ class Wizards extends Component {
       <div className="container">
         <WizardSelector wizard={selectedWizard} />
         <div className="search-wizards">
-          <label>Search Houses</label>
-          <input
-            type="text"
-            value={searchedWizard}
-            onChange={e => this.handleWizardSearch(e)}
-          />
-
-          <button
-            className="search-button"
-            onClick={() => this.searchWizards()}
-          >
-            Submit
-          </button>
+          <form onSubmit={e => this.searchWizards(e)}>
+            <label>Search Houses</label>
+            <input
+              type="text"
+              value={"" || searchedWizard}
+              onChange={e => this.handleWizardSearch(e)}
+            />
+            <input type="submit" value="Submit" className="search-button" />
+          </form>
         </div>
         <div className="wizards-container">
           {wizards.length > 0
