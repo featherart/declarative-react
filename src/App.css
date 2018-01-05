@@ -75,6 +75,14 @@ label {
   border: none;
 }
 
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: white;
+  font-size: 1.3rem;
+  font-family: fantasy;
+}
 .wizard {
   animation: square-fade-in 1 10s ease;
   background-color: black;
@@ -87,8 +95,6 @@ label {
 
 .wizard:hover {
   background-color: transparent;
-  color: limegreen;
-  border: 1px solid limegreen;
 }
 
 .Hufflepuff {
@@ -97,6 +103,12 @@ label {
 
 .Gryffindor {
   background: rgba(0, 12, 24, 0.8);
+}
+.Gryffindor.selected,
+.Hufflepuff.selected,
+.Slytherin.selected,
+.Ravenclaw.selected {
+  background: rgba(200, 10, 0, 0.4);
 }
 
 .Slytherin {

@@ -37,29 +37,35 @@ class Wizards extends Component {
       <div className="container">
         <WizardSelector wizard={selectedWizard} />
         <div className="search-wizards">
-           <label for="search">
-            Search Houses
-            </label>
-            <input
-              type="text"
-              id="search"
-              value={searchedWizard}
-              onChange={e => this.handleWizardSearch(e)}
-            />
+          <label>Search Houses</label>
+          <input
+            type="text"
+            value={searchedWizard}
+            onChange={e => this.handleWizardSearch(e)}
+          />
 
-          <button className="search-button" onClick={() => this.searchWizards()}>Submit</button>
+          <button
+            className="search-button"
+            onClick={() => this.searchWizards()}
+          >
+            Submit
+          </button>
         </div>
         <div className="wizards-container">
-          {wizards.map(wiz =>
-            <div
-              key={wiz.id}
-              data-name={wiz.name}
-              onClick={e => this.handleWizardChange(e)}
-              className={`wizard ${wiz.house}`}
-            >
-              {wiz.name} from House {wiz.house}
-            </div>
-          )}
+          {wizards.length > 0
+            ? wizards.map(wiz =>
+                <div
+                  key={wiz.id}
+                  data-name={wiz.name}
+                  onClick={e => this.handleWizardChange(e)}
+                  className={`wizard ${wiz.house} ${wiz.name === selectedWizard
+                    ? "selected"
+                    : ""}`}
+                >
+                  {wiz.name} from House {wiz.house}
+                </div>
+              )
+            : <div className="no-results">No Wizards to Show!</div>}
         </div>
       </div>
     );
